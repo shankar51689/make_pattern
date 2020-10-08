@@ -1,33 +1,26 @@
-n=int(input('Enter odd number'))
-for i in range(n):
-    for j in range(n):
+n=int(input('Enter a odd number'))
+if(n%2!=0 and n>=5):
+    for i in range(n):
         if(i==0):
-            if(j>=0 and j<(n+1)//2):
-                print('* ',end='')
-            elif(j>=(((n+1)//2)-2) and j<(n-1)):
-                print('  ',end='')
-            else:
-                print('*',end='')
-        elif(i>=1 and i<(n//2)):
-            if(j<(n//2)):
-                print('  ',end='')
-            elif(j>(n//2) and j<(n-1)):
-                print('  ',end='')
-            else:
-                print('* ',end='')
-        elif(i==(n//2)):
+            print('* '*((n+1)//2),end='')
+            print('  '*(((n+1)//2)-2),end='')
+            print('*',end='')
+        elif(i>0 and i<(n//2)):
+            print('  '*(n//2),end='')
             print('* ',end='')
-            
+            print('  '*(((n+1)//2)-2),end='')
+            print('*',end='')
+        elif(i==(n//2)):
+            print('* '*n,end='')
         elif(i>(n//2) and i<(n-1)):
-            if(j==0 or j==(n//2)):
-                print('* ',end='')
-            else:
-                print('  ',end='')
-        else:
-            if(j==0):
-                print('* ',end='')
-            elif(j>0 and j<(n//2)):
-                print('  ',end='')
-            else:
-                print('* ',end='')
-    print()
+            print('* ',end='')
+            print('  '*(((n+1)//2)-2),end='')
+            print('*',end='')
+        elif(i==(n-1)):
+            print('* ',end='')
+            print('  '*(((n+1)//2)-2),end='')
+            print('* '*((n+1)//2),end='')
+        print()
+else:
+    print('Only odd number and greater then 4 please!')
+    
